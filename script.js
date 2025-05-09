@@ -9,6 +9,15 @@ document
     const apellido = document
       .getElementById("apellido")
       .value.trim();
+    const fechaNacimiento = document
+      .getElementById("fechaNacimiento")
+      .value.trim();
+    const genero = document.querySelector(
+      'input[name="genero"]:checked'
+    );
+    const generoValue = genero
+      ? genero.value
+      : null; 
     const email = document
       .getElementById("email")
       .value.trim();
@@ -22,6 +31,8 @@ document
     if (
       nombre &&
       apellido &&
+      fechaNacimiento &&
+      generoValue &&  
       email &&
       telefono &&
       direccion
@@ -31,6 +42,8 @@ document
       ).innerHTML = `
       <strong>Datos Ingresados:</strong><br>
       Nombre: ${nombre} ${apellido}<br>
+      Fecha de Nacimiento: ${fechaNacimiento}<br>
+      Género: ${generoValue}<br>
       Email: ${email}<br>
       Teléfono: ${telefono}<br>
       Dirección: ${direccion}
